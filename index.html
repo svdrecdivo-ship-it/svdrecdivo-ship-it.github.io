@@ -3,56 +3,129 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🎮 WEB GAME ĐẦU BÒ CỦA NAM 🎮</title>
+    <title>🎮 TRẠM GAME GIẢI TRÍ - TRẦN BẢO NAM 🎮</title>
     <style>
+        /* Nền Gradient chuyển động cực mượt */
         body { 
             background: linear-gradient(-45deg, #0f2027, #203a43, #2c5364, #1e3c72);
             background-size: 400% 400%;
-            animation: gradient 10s ease infinite;
-            color: white; font-family: sans-serif; margin: 0; text-align: center;
+            animation: gradient 12s ease infinite;
+            color: white;
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
         }
-        @keyframes gradient { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
-        
-        h1 { margin: 30px 0; text-shadow: 0 0 15px #00ffcc; padding: 10px; border: 2px solid #00ffcc; display: inline-block; border-radius: 50px; }
 
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        h1 { 
+            margin: 30px 0; 
+            font-size: 2rem;
+            text-shadow: 0 0 15px #00ffcc;
+            background: rgba(0,0,0,0.6);
+            padding: 10px 30px;
+            border-radius: 50px;
+            border: 2px solid #00ffcc;
+        }
+
+        /* Chia 2 game trên 1 hàng */
         .game-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr); /* 2 game 1 hàng */
-            gap: 20px; width: 95%; max-width: 1200px; margin: 0 auto 50px auto;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            width: 95%;
+            max-width: 1200px;
         }
 
-        .game-card { background: rgba(0,0,0,0.8); padding: 15px; border-radius: 15px; border: 1px solid #ffffff22; }
-        
-        /* Iframe không dùng sandbox để tránh bị chặn */
-        iframe { width: 100%; height: 450px; border: none; border-radius: 10px; background: #000; }
+        .game-card { 
+            background: rgba(0, 0, 0, 0.8); 
+            padding: 15px; 
+            border-radius: 15px; 
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: 0.3s;
+        }
 
-        @media (max-width: 850px) { .game-grid { grid-template-columns: 1fr; } }
+        .game-card:hover { border-color: #00ffcc; transform: scale(1.02); }
+
+        h2 { color: #00ffcc; font-size: 1.1rem; margin-bottom: 10px; }
+
+        iframe { 
+            width: 100%; 
+            height: 400px; 
+            border: none; 
+            border-radius: 10px; 
+            background: #000;
+        }
+
+        /* ĐOẠN CODE BỔ SUNG: Dòng chữ Nam yêu cầu */
+        .special-note {
+            margin-top: 30px;
+            margin-bottom: 40px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #ff00ff; /* Màu hồng neon */
+            text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff;
+            background: rgba(0,0,0,0.5);
+            padding: 15px 25px;
+            border-radius: 10px;
+            border: 1px dashed #ff00ff;
+            animation: blink 1.5s infinite;
+        }
+
+        @keyframes blink {
+            0% { opacity: 1; }
+            50% { opacity: 0.6; }
+            100% { opacity: 1; }
+        }
+
+        /* Mobile */
+        @media (max-width: 800px) {
+            .game-grid { grid-template-columns: 1fr; }
+            .special-note { font-size: 1.1rem; width: 80%; }
+        }
+
+        .footer { background: rgba(0,0,0,0.8); width: 100%; text-align: center; padding: 20px; margin-top: auto; }
     </style>
 </head>
 <body>
 
-    <h1>🎮 WEB GAME ĐẦU BÒ CỦA NAM 🎮</h1>
+    <h1>🎮 TRẠM GAME CỦA NAM 🎮</h1>
 
     <div class="game-grid">
         <div class="game-card">
-            <h3>Trò Chơi 1</h3>
+            <h2>Trò Chơi 1</h2>
             <iframe src="https://html5.gamedistribution.com/a084e6ab82f9420bbe89bbe5c1b150fc/" allowfullscreen></iframe>
         </div>
 
         <div class="game-card">
-            <h3>Trò Chơi 2</h3>
+            <h2>Trò Chơi 2</h2>
             <iframe src="https://html5.gamedistribution.com/4ac9f70eac99427d9fa87c1e7e1908ef/" allowfullscreen></iframe>
         </div>
 
         <div class="game-card">
-            <h3>Trò Chơi 3</h3>
+            <h2>Trò Chơi 3</h2>
             <iframe src="https://html5.gamedistribution.com/5f0179bde2b543d5900d20792978a3a5/" allowfullscreen></iframe>
         </div>
 
         <div class="game-card">
-            <h3>Trò Chơi 4</h3>
-            <iframe src="https://html5.gamedistribution.com/172e0bd0c40442dbae3d4adb42a98433/" allowfullscreen></iframe>
+            <h2>Trò Chơi 4</h2>
+            <iframe src="https://html5.gamedistribution.com/172e079bde2b543d5900d20792978a3a5/" allowfullscreen></iframe>
         </div>
+    </div>
+
+    <div class="special-note">
+        "GAME Ờ VAI LƠ BỒ NHƯNG PỜ LÂY VẪN ĐƯỢC :0"
+    </div>
+
+    <div class="footer">
+        © 2026 - Designed by <strong>Trần Bảo Nam</strong>
     </div>
 
 </body>
